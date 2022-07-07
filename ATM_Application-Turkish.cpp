@@ -6,16 +6,16 @@ int withdrawAmount;
 int depositAmount;
 int getiban;
 
-int balanceEge = 500;
-int balanceMert = 450;
+int balanceX = 500;
+int balanceY = 450;
 
-int egeIban = 123456;
-int mertIban = 654321;
+int xIban = 123456;
+int yIban = 654321;
 
-std::string account_1 = "ege";
+std::string account_1 = "x";
 std::string account_1_password = "123";
 
-std::string account_2 = "mert";
+std::string account_2 = "y";
 std::string account_2_password = "123";
 
 
@@ -46,9 +46,9 @@ int main() {
 		std::cin >> takepassword;
 
 		if (takeusername == account_1 && takepassword == account_1_password){
-			//ege
+			//X
 			system("cls");
-			std::cout << "Welcome Ege." << std::endl;
+			std::cout << "Welcome X." << std::endl;
 			
 			do{
 			ui();
@@ -59,13 +59,13 @@ int main() {
 
 			case 1: 
 				system("cls");
-				std::cout << "Your current balance on bank is " << balanceEge << "$\n" << std::endl;; break;
+				std::cout << "Your current balance on bank is " << balanceX << "$\n" << std::endl;; break;
 
 			case 2: 
 				system("cls");
 				std::cout << "How much do you want to deposit: ";
 				std::cin >> depositAmount;
-				balanceEge += depositAmount;
+				balanceX += depositAmount;
 				system("cls");
 				std::cout << "Succesfully deposited " << depositAmount << " to your bank account.\n" << std::endl;
 				break;
@@ -74,8 +74,8 @@ int main() {
 				system("cls");
 				std::cout << "How much do you want to withdraw: ";
 				std::cin >> withdrawAmount;
-				if (withdrawAmount <= balanceEge) {
-					balanceEge -= withdrawAmount;
+				if (withdrawAmount <= balanceX) {
+					balanceX -= withdrawAmount;
 					system("cls");
 					std::cout << "Withdraw was succesfull.\n" << std::endl;
 					break;
@@ -94,22 +94,22 @@ int main() {
 				std::cout << "Amount: ";
 				std::cin >> sendingAmount;
 
-				if (getiban == egeIban) {
+				if (getiban == xIban) {
 					system("cls");
 					std::cout << "You cant send money to yourself. bakaaa!\n" << std::endl; break;
 				}
 
 
-				else if (sendingAmount > balanceEge){
+				else if (sendingAmount > balanceX){
 					system("cls");
 					std::cout << "You dont have enough money. bakaaa!\n" << std::endl; break;
 				}
 
 
-				else if (getiban == mertIban) {
+				else if (getiban == yIban) {
 
-					balanceEge -= sendingAmount;
-					balanceMert += sendingAmount;
+					balanceX -= sendingAmount;
+					balanceY += sendingAmount;
 					system("cls");
 					std::cout << "Succesfully sended "<< sendingAmount << " to " << account_2 << "\n" << std::endl; break;
 					
@@ -136,7 +136,7 @@ int main() {
 		else if (takeusername == account_2 && takepassword == account_2_password) {
 			//mert
 			system("cls");
-			std::cout << "Welcome Mert." << std::endl;
+			std::cout << "Welcome Y." << std::endl;
 			do {
 				ui();
 				std::cout << "\nOption: ";
@@ -146,13 +146,13 @@ int main() {
 
 				case 1:
 					system("cls");
-					std::cout << "Your current balance on bank is " << balanceMert << "$\n" << std::endl;; break;
+					std::cout << "Your current balance on bank is " << balanceY << "$\n" << std::endl;; break;
 
 				case 2:
 					system("cls");
 					std::cout << "How much do you want to deposit: ";
 					std::cin >> depositAmount;
-					balanceMert += depositAmount;
+					balanceY += depositAmount;
 					system("cls");
 					std::cout << "Succesfully deposited " << depositAmount << " to your bank account.\n" << std::endl;
 					break;
@@ -161,8 +161,8 @@ int main() {
 					system("cls");
 					std::cout << "How much do you want to withdraw: ";
 					std::cin >> withdrawAmount;
-					if (withdrawAmount <= balanceMert) {
-						balanceMert -= withdrawAmount;
+					if (withdrawAmount <= balanceY) {
+						balanceY -= withdrawAmount;
 						system("cls");
 						std::cout << "Withdraw was succesfull.\n" << std::endl;
 						break;
@@ -181,22 +181,22 @@ int main() {
 					std::cout << "Amount: ";
 					std::cin >> sendingAmount;
 
-					if (getiban == mertIban) {
+					if (getiban == yIban) {
 						system("cls");
 						std::cout << "You cant send money to yourself. bakaaa!\n" << std::endl; break;
 					}
 
 
-					else if (sendingAmount > balanceMert) {
+					else if (sendingAmount > balanceY) {
 						system("cls");
 						std::cout << "You dont have enough money. bakaaa!\n" << std::endl; break;
 					}
 
 
-					else if (getiban == egeIban) {
+					else if (getiban == xIban) {
 
-						balanceMert -= sendingAmount;
-						balanceEge += sendingAmount;
+						balanceY -= sendingAmount;
+						balanceX += sendingAmount;
 						system("cls");
 						std::cout << "Succesfully sended " << sendingAmount << " to " << account_1 << "\n" << std::endl; break;
 
